@@ -1,8 +1,10 @@
 import "./styles.css";
-import { useFetchData } from "./hook/useFetchData";
+import { useFetchData } from "./hooks/useFetchData";
 
 export default function App() {
-  const { response, isLoading } = useFetchData();
+  const { response, isLoading } = useFetchData(
+    "https://swapi.dev/api/people/1/"
+  );
   if (!response) {
     return <h2>Loading...</h2>;
   }
