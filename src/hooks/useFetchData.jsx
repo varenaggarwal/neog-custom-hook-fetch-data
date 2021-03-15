@@ -8,13 +8,14 @@ export function useFetchData(serverUrl) {
 
   useEffect(() => {
     (async function () {
-      setIsLoading(true);
+      setIsLoading(() => true);
       try {
         const serverResponse = await axios.get(serverUrl);
         setResponse(() => serverResponse);
-        setIsLoading(false);
       } catch (error) {
-        setError(error);
+        setError(() => error);
+      } finally {
+        setIsLoading(() => false);
       }
     })();
   }, []);
