@@ -9,5 +9,5 @@ export function useFetchData() {
       setResponse(() => serverResponse);
     })();
   }, []);
-  return response;
+  return { response };
 }
