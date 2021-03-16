@@ -9,7 +9,7 @@ export default function App() {
   console.log({ response });
   console.log({ isLoading });
 
-  const postReq = usePostData("");
+  // const postReq = usePostData("");
 
   if (!response) {
     return <h2>Loading...</h2>;
