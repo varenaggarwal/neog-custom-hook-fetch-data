@@ -5,9 +5,14 @@ import { usePostData } from "./hooks/usePostData";
 export default function App() {
   const { response, isLoading } = useFetchData("/api/addresses");
   console.log({ response, isLoading });
+  // const postRes = usePostData("/api/addresses", { address: "Mars" });
   if (!response || isLoading) {
     return <h2>Loading...</h2>;
   }
+
+  const add = () => {
+    const postRes = usePostData("/api/addresses", { address: "Mars" });
+  };
 
   return (
     <div className="App">
@@ -18,6 +23,7 @@ export default function App() {
           <li key={address.id}>{address.city}</li>
         ))}
       </ul>
+      <button onClick={add}>Add</button>
     </div>
   );
 }
