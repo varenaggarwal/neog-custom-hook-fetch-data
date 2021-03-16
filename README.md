@@ -2,5 +2,7 @@
 
 ## To Do
 
-GET - DONE
-POST - DEV IN PROGRESS
+| Call | Status          |
+| ---- | --------------- |
+| Get  | DONE            |
+| Post | DEV IN PROGRESS |
