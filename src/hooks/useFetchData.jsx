@@ -12,9 +12,9 @@ export function useFetchData(serverUrl) {
       try {
         const serverResponse = await axios.get(serverUrl);
         setResponse(() => serverResponse);
+        setIsLoading(() => false);
       } catch (error) {
         setError(() => error);
-      } finally {
         setIsLoading(() => false);
       }
     })();
