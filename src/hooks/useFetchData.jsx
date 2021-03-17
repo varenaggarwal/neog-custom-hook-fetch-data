@@ -7,6 +7,7 @@ export function useFetchData(serverUrl) {
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(serverUrl);
   useEffect(() => {
+    console.log("in the custom hook");
     (async function () {
       setIsLoading(() => true);
       try {

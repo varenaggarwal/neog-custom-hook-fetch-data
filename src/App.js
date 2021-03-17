@@ -9,7 +9,7 @@ export default function App() {
 
   const refreshHandler = () => {
     setUrl(() => "/api/addresses");
-    console.log("here", { response, isLoading });
+    console.log("refresh:", { response, isLoading });
   };
 
   if (!response || isLoading) {
