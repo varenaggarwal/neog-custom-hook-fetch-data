@@ -5,12 +5,12 @@ export function useFetchData(serverUrl) {
   const [response, setResponse] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  const [url, setUrl] = useState(serverUrl);
   useEffect(() => {
     (async function () {
       setIsLoading(() => true);
       try {
-        const serverResponse = await axios.get(serverUrl);
+        const serverResponse = await axios.get(url);
         setResponse(() => serverResponse);
         setIsLoading(() => false);
       } catch (error) {
@@ -18,6 +18,6 @@ export function useFetchData(serverUrl) {
         setIsLoading(() => false);
       }
     })();
-  }, []);
-  return { response, isLoading, error };
+  }, [url]);
+  return { response, isLoading, error, setUrl };
 }
